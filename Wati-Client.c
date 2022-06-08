@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Wati-Client.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: Wati-Theo <wati-theo@protonmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:18:53 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/07 22:02:31 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/06/08 16:29:37 by Wati-Theo        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	send(unsigned char c, int pid)
 	index = 7;
 	while (index >= 0)
 	{
-		usleep(80);
+		usleep(800);
 		if (c & 1)
 			kill(pid, SIGUSR2);
 		else
