@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Wati-Server.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: Wati-Theo <wati-theo@protonmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:18:46 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/07 22:03:35 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/06/08 15:59:23 by Wati-Theo        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ void	siga(int bit)
 	static unsigned char	msg = 0;
 	static int				count = 0;
 
-	printf("c: %d, msg: %d, b: %d\n", count, msg, bit);
 	msg += bit << count;
 	count++;
 	if (count == 8)
 	{
-		printf("\n%c\n", msg);
+		write(1, &msg, 1);
 		msg = 0;
 		count = 0;
 	}
