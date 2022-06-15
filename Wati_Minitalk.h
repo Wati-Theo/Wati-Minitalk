@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wati_Minitalk.h                                    :+:      :+:    :+:   */
+/*   Wat_Minitalk.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Wati-Theo <wati-theo@protonmail.com>       +#+  +:+       +#+        */
+/*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:16 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/09 19:17:05 by Wati-Theo        ###   ########lyon.fr   */
+/*   Updated: 2022/06/15 18:39:30 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct s_msg {
 
 extern t_msg	g_msg;
 
-void    ft_putnbr(int n)
+void	ft_putnbr(int n);
 size_t	ft_strlen(unsigned char *s);
-int		ft_atoi(const char *str);
 void	ft_putstr(char *s);
+int		ft_isdigit(int c);
 #endif

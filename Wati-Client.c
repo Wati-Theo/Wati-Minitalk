@@ -6,11 +6,37 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:18:53 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/08 23:55:59 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/06/15 18:38:04 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Wati_Minitalk.h"
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	res;
+	int	neg;
+
+	i = 0;
+	res = 0;
+	neg = 1;
+	while (str[i] == '\f' || str[i] == '\n' || str[i] == '\r'
+		|| str[i] == '\t' || str[i] == '\v' || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			neg = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		res = (res * 10) + (str[i] - 48);
+		i++;
+	}
+	return (res * neg);
+}
 
 int	ft_msglen(char *s)
 {
@@ -31,7 +57,7 @@ void	send(int c, int pid, int choice)
 		index = 7;
 	while (index >= 0)
 	{
-		usleep(200);
+		usleep(45);
 		if (c & 1)
 			kill(pid, SIGUSR2);
 		else
@@ -48,7 +74,6 @@ int	main(int argc, char *argv[])
 	i = 0;
 	if (argc != 3)
 		return (EXIT_FAILURE);
-	printf("%d\n", ft_msglen(argv[2]));
 	send(ft_msglen(argv[2]), ft_atoi(argv[1]), 42);
 	while (argv[2][i])
 	{

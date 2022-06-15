@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Wati-Utilis.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Wati-Theo <wati-theo@protonmail.com>       +#+  +:+       +#+        */
+/*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:19:03 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/09 19:15:03 by Wati-Theo        ###   ########lyon.fr   */
+/*   Updated: 2022/06/15 18:38:52 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Wati_Minitalk.h"
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-        write(1, &c, 1);
+	write(1, &c, 1);
 }
 
 size_t	ft_strlen(unsigned char *s)
@@ -27,7 +27,7 @@ size_t	ft_strlen(unsigned char *s)
 	return (i);
 }
 
-void    ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 	{
@@ -63,30 +63,4 @@ int	ft_isdigit(int c)
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
-}
-
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	res;
-	int	neg;
-
-	i = 0;
-	res = 0;
-	neg = 1;
-	while (str[i] == '\f' || str[i] == '\n' || str[i] == '\r'
-		|| str[i] == '\t' || str[i] == '\v' || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			neg = -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		res = (res * 10) + (str[i] - 48);
-		i++;
-	}
-	return (res * neg);
 }
