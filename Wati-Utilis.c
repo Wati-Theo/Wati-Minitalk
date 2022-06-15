@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Wati-Utilis.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: Wati-Theo <wati-theo@protonmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:19:03 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/08 22:57:12 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/06/09 19:15:03 by Wati-Theo        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Wati_Minitalk.h"
+
+void    ft_putchar(char c)
+{
+        write(1, &c, 1);
+}
 
 size_t	ft_strlen(unsigned char *s)
 {
@@ -22,30 +27,35 @@ size_t	ft_strlen(unsigned char *s)
 	return (i);
 }
 
-unsigned char	*ft_el_famoso(unsigned char *msg, unsigned char byte)
+void    ft_putnbr(int n)
 {
-	unsigned char	*str;
-	int				i;
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n > 9)
+		ft_putnbr(n / 10);
+	ft_putchar((n % 10) + '0');
+}
 
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	if (!s)
+		return ;
 	i = 0;
-	if (!msg && byte)
+	while (s[i])
 	{
-		str = malloc(2 * sizeof(char));
-		str[0] = byte;
-		str[1] = 0;
+		write(1, &(s[i]), 1);
+		i++;
 	}
-	else
-	{
-		str = malloc((ft_strlen(msg) + 1) * sizeof(char));
-		while (msg[i])
-		{
-			str[i] = msg[i];
-			i++;
-		}
-		str[i] = byte;
-		str[++i] = 0;
-	}
-	return (str);
 }
 
 int	ft_isdigit(int c)
