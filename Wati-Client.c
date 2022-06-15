@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:18:53 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/15 18:38:04 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/06/15 18:50:46 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,12 @@ void	send(int c, int pid, int choice)
 
 int	main(int argc, char *argv[])
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	if (argc != 3)
 		return (EXIT_FAILURE);
+	printf("msglen:%d\n", ft_msglen(argv[2]));
 	send(ft_msglen(argv[2]), ft_atoi(argv[1]), 42);
 	while (argv[2][i])
 	{
