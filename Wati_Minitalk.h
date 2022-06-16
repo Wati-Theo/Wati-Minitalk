@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wat_Minitalk.h                                     :+:      :+:    :+:   */
+/*   Wati_Minitalk.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:16 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/15 18:39:30 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/06/16 14:46:54 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WATI_MINITALK_H
 # define WATI_MINITALK_H
 
-# include <sys/types.h>
 # include <signal.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 

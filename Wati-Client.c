@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:18:53 by tschlege          #+#    #+#             */
-/*   Updated: 2022/06/15 18:50:46 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/06/16 14:36:27 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	send(int c, int pid, int choice)
 		index = 7;
 	while (index >= 0)
 	{
-		usleep(45);
+		usleep(42);
 		if (c & 1)
 			kill(pid, SIGUSR2);
 		else
@@ -74,7 +74,6 @@ int	main(int argc, char *argv[])
 	i = 0;
 	if (argc != 3)
 		return (EXIT_FAILURE);
-	printf("msglen:%d\n", ft_msglen(argv[2]));
 	send(ft_msglen(argv[2]), ft_atoi(argv[1]), 42);
 	while (argv[2][i])
 	{
